@@ -9,6 +9,3 @@ def flatten_list(nested_list):
             flattened_list.append(n)
 
     return flattened_list    
-
-test_list = [18, [10, [5]], (802, 80), "passord"]
-print(flatten_list(test_list))
