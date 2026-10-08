@@ -10,7 +10,12 @@ def flatten_list(nested_list):
 
     return flattened_list
 
-with open("log_4.txt", "r", encoding="latin-1") as file:
-    content = file.read()
+file_encodings = {
+    "log_1.txt": "utf-8",
+    "log_2.txt": "utf-8",
+    "log_3.txt": "utf-16",
+    "log_4.txt": "latin-1"
+}
 
-print(content)
+log_lines = []
+
