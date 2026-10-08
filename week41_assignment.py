@@ -8,4 +8,9 @@ def flatten_list(nested_list):
         else:
             flattened_list.append(n)
 
-    return flattened_list    
+    return flattened_list
+
+with open("log_4.txt", "r", encoding="latin-1") as file:
+    content = file.read()
+
+print(content)
