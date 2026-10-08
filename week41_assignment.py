@@ -23,9 +23,9 @@ for filename, encoding in file_encodings.items():
     with open(filename, 'r', encoding=encoding) as file:
         content = file.readlines()
         for line in content:
-            print(filename, repr(line[:15]))
             if line.startswith("["):
                 log_lines.append(line)
 
-print(len(log_lines))
-
+with open('combined_lines.txt', 'w', encoding='utf-8-sig') as file:
+    for line in log_lines:
+        file.write(line)
