@@ -19,3 +19,9 @@ file_encodings = {
 
 log_lines = []
 
+for filename, encoding in file_encodings.items():
+    with open(filename, 'r', encoding=encoding) as file:
+        content = file.readlines()
+        for line in content:
+            if line.startswith("["):
+                log_lines.append(line)
