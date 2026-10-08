@@ -10,6 +10,7 @@ def flatten_list(nested_list):
 
     return flattened_list
 
+
 file_encodings = {
     "log_1.txt": "utf-8",
     "log_2.txt": "utf-8-sig",
@@ -17,15 +18,19 @@ file_encodings = {
     "log_4.txt": "latin-1"
 }
 
-log_lines = []
+def sort_error_logs(encodings):
 
-for filename, encoding in file_encodings.items():
-    with open(filename, 'r', encoding=encoding) as file:
-        content = file.readlines()
-        for line in content:
-            if line.startswith("["):
-                log_lines.append(line)
+    log_lines = []
 
-with open('combined_lines.txt', 'w', encoding='utf-8-sig') as file:
-    for line in log_lines:
-        file.write(line)
+    for filename, encoding in file_encodings.items():
+        with open(filename, 'r', encoding=encoding) as file:
+            content = file.readlines()
+            for line in content:
+                if line.startswith("["):
+                    log_lines.append(line)
+
+    with open('combined_lines.txt', 'w', encoding='utf-8-sig') as file:
+        for line in log_lines:
+            file.write(line)
+
+sort_error_logs(file_encodings)
