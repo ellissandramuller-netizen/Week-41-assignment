@@ -25,3 +25,6 @@ for filename, encoding in file_encodings.items():
         for line in content:
             if line.startswith("["):
                 log_lines.append(line)
+
+print(len(log_lines))
+
